@@ -1,0 +1,13 @@
+debImport "-abdir" "./build/simv.daidir"
+wvCreateWindow
+wvSetPosition -win $_nWave2 {("G1" 0)}
+wvOpenFile -win $_nWave2 {/home/aedu16/0901_dedicated_counter_cpu/wave.fsdb}
+verdiSetActWin -win $_nWave2
+verdiWindowResize -win $_Verdi_1 "830" "370" "900" "700"
+verdiWindowResize -win $_Verdi_1 "830" "370" "900" "700"
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+wvSelectGroup -win $_nWave2 {G1}
+verdiSetActWin -win $_nWave2
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+debExit

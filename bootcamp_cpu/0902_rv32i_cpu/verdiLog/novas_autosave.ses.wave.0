@@ -1,0 +1,135 @@
+Magic 271485
+Revision Verdi_W-2024.09-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1278 564 203 88
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/aedu16/bootcamp_cpu/0902_rv32i_cpu/inter.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 60600.000000
+cursor 60000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 29
+; marker line index
+markerPos 10
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "dut"
+activeDirFile "" "/home/aedu16/bootcamp_cpu/0902_rv32i_cpu/inter.fsdb"
+addSignal -h 15 /tb_rv32i_cpu/dut/clk
+addSignal -h 15 /tb_rv32i_cpu/dut/rst_n
+addSubGroup "U_CONTROL_UNIT"
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/instr_code[31:0]
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/rf_we
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/alusrc_sel
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/alu_control[3:0]
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/dwe
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/itype[2:0]
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/rfsrc_sel
+endSubGroup "U_CONTROL_UNIT"
+addSubGroup "U_RV32I_CPU" -e FALSE
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/clk
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/rst_n
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/instr_code[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/instr_addr[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/drdata[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/dwdata[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/daddr[31:0]
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/dwe
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/itype[2:0]
+endSubGroup "U_RV32I_CPU"
+addSubGroup "U_DATA_MEM" -e FALSE
+addSignal -h 15 /tb_rv32i_cpu/dut/U_DATA_MEM/clk
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_DATA_MEM/daddr[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_DATA_MEM/dwdata[31:0]
+addSignal -h 15 /tb_rv32i_cpu/dut/U_DATA_MEM/dwe
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_DATA_MEM/itype[2:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_DATA_MEM/drdata[31:0]
+endSubGroup "U_DATA_MEM"
+addSubGroup "U_DATAPATH"
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/clk
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/rst_n
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/rf_we
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/rfsrc_sel
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/alusrc_sel
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/alu_control[3:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/instr_code[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/drdata[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/instr_addr[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/daddr[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/dwdata[31:0]
+addSubGroup "U_ALU" -e FALSE
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALU/rs1[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALU/rs2[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALU/alu_control[3:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALU/alu_result[31:0]
+endSubGroup "U_ALU"
+addSubGroup "U_ALUSRC_MUX" -e FALSE
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALUSRC_MUX/sel
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALUSRC_MUX/in0[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALUSRC_MUX/in1[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALUSRC_MUX/mux_out[31:0]
+endSubGroup "U_ALUSRC_MUX"
+addSubGroup "U_IMM_EXTEND" -e FALSE
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_IMM_EXTEND/instr_code[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_IMM_EXTEND/imm_extend[31:0]
+endSubGroup "U_IMM_EXTEND"
+addSubGroup "U_PC" -e FALSE
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_PC/clk
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_PC/rst_n
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_PC/pc[31:0]
+endSubGroup "U_PC"
+addSubGroup "U_REG_FILE" -e FALSE
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/clk
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/rst_n
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/ra1[4:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/ra2[4:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/wa[4:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/wd[31:0]
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/we
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/rd1[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/rd2[31:0]
+endSubGroup "U_REG_FILE"
+addSubGroup "U_WB_MUX"
+addSignal -h 15 /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_WB_MUX/sel
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_WB_MUX/in0[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_WB_MUX/in1[31:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_WB_MUX/mux_out[31:0]
+endSubGroup "U_WB_MUX"
+endSubGroup "U_DATAPATH"
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

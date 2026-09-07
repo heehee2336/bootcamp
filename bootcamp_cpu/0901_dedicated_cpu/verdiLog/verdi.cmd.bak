@@ -1,0 +1,37 @@
+simSetSimulator "-vcssv" -exec "/home/aedu16/0901_dedicated_cpu/build/simv" -args \
+           "-cm line+cond+fsm+tgl+branch+assert -cm_dir coverage.vdb -cm_name sim1 +UVM_VERBOSITY=UVM_HIGH"
+debImport "-abdir" "./build/simv.daidir" "-dbdir" \
+          "/home/aedu16/0901_dedicated_cpu/build/simv.daidir"
+debLoadSimResult /home/aedu16/0901_dedicated_cpu/wave.fsdb
+wvCreateWindow
+verdiSetActWin -win $_nWave2
+verdiWindowResize -win $_Verdi_1 "0" "0" "900" "700"
+verdiWindowResize -win $_Verdi_1 "830" "370" "900" "700"
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcHBSelect "tb_dedicated_cpu.dut" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcInvokeExtEditor -win $_nTrace1
+verdiSetActWin -win $_nEditor_3
+srcHBSelect "tb_dedicated_cpu.dut" -win $_nTrace1
+srcSetScope "tb_dedicated_cpu.dut" -delim "." -win $_nTrace1
+srcHBSelect "tb_dedicated_cpu.dut" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcDeselectAll -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcAction -pos 68 5 0 -win $_nTrace1 -name "
+" -ctrlKey off
+srcAction -pos 68 5 0 -win $_nTrace1 -name "
+" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcAction -pos 68 5 0 -win $_nTrace1 -name "
+" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcInvokeExtEditor -win $_nTrace1
+verdiSetActWin -win $_nEditor_4
+srcSaveAs -win $_nTrace4 -file \
+          /home/aedu16/0901_dedicated_cpu/rtl/dedicated_cpu.sv
+srcSaveAs -win $_nTrace4 -file \
+          /home/aedu16/0901_dedicated_cpu/rtl/dedicated_cpu.sv
+srcCloseWindow -win $_nTrace4
+srcCloseWindow -win $_nTrace3
+debExit

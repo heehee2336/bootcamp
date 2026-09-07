@@ -1,0 +1,429 @@
+verdiSetActWin -dock widgetDock_<Decl._Tree>
+simSetSimulator "-vcssv" -exec \
+           "/home/aedu16/bootcamp_cpu/0902_rv32i_cpu/build/simv" -args
+debImport "-abdir" "./build/simv.daidir" "-dbdir" \
+          "/home/aedu16/bootcamp_cpu/0902_rv32i_cpu/build/simv.daidir"
+debLoadSimResult /home/aedu16/bootcamp_cpu/0902_rv32i_cpu/wave.fsdb
+wvCreateWindow
+verdiWindowResize -win $_Verdi_1 "1518" "272" "900" "700"
+verdiSetActWin -win $_nWave2
+verdiWindowResize -win $_Verdi_1 "1518" "272" "900" "700"
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcHBSelect "tb_rv32i_cpu.dut" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcTBInvokeSim
+verdiSetActWin -win $_InteractiveConsole_3
+verdiDockWidgetSetCurTab -dock windowDock_nWave_2
+verdiSetActWin -win $_nWave2
+verdiDockWidgetHide -dock widgetDock_<Watch>
+srcTBSetHiddenView -view WatchView
+srcHBDrag -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+wvDumpScope "tb_rv32i_cpu.dut"
+wvSetPosition -win $_nWave2 {("dut" 0)}
+wvRenameGroup -win $_nWave2 {G1} {dut}
+wvAddSignal -win $_nWave2 "/tb_rv32i_cpu/dut/clk" "/tb_rv32i_cpu/dut/rst_n"
+wvSetPosition -win $_nWave2 {("dut" 0)}
+wvSetPosition -win $_nWave2 {("dut" 2)}
+wvSetPosition -win $_nWave2 {("dut" 2)}
+srcHBSelect "tb_rv32i_cpu.dut" -win $_nTrace1
+srcSetScope "tb_rv32i_cpu.dut" -delim "." -win $_nTrace1
+srcHBSelect "tb_rv32i_cpu.dut" -win $_nTrace1
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU" -win $_nTrace1
+srcSetScope "tb_rv32i_cpu.dut.U_RV32I_CPU" -delim "." -win $_nTrace1
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU" -win $_nTrace1
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH" -win $_nTrace1
+srcSetScope "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH" -delim "." -win $_nTrace1
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH" -win $_nTrace1
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH.U_ALU" -win $_nTrace1
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("dut" 2)}
+wvDumpScope "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH"
+wvSetPosition -win $_nWave2 {("dut" 2)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_DATAPATH}
+wvAddSignal -win $_nWave2 "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/clk" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/rst_n" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/rf_we" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/rfsrc_sel" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/alusrc_sel" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/alu_control\[3:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/instr_code\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/drdata\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/instr_addr\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/daddr\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/dwdata\[31:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 11)}
+wvScrollDown -win $_nWave2 0
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH.U_ALU" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 10)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 11)}
+wvDumpScope "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH.U_ALU" \
+           "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH.U_ALUSRC_MUX" \
+           "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH.U_IMM_EXTEND" \
+           "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH.U_PC" \
+           "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH.U_REG_FILE" \
+           "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH.U_WB_MUX"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 11)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_ALU" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_ALU}
+wvAddSignal -win $_nWave2 \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALU/rs1\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALU/rs2\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALU/alu_control\[3:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALU/alu_result\[31:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_ALU" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_ALU" 4)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_ALU" 4)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_ALUSRC_MUX" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_ALUSRC_MUX}
+wvAddSignal -win $_nWave2 \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALUSRC_MUX/sel" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALUSRC_MUX/in0\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALUSRC_MUX/in1\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_ALUSRC_MUX/mux_out\[31:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_ALUSRC_MUX" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_ALUSRC_MUX" 4)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_ALUSRC_MUX" 4)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_IMM_EXTEND" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_IMM_EXTEND}
+wvAddSignal -win $_nWave2 \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_IMM_EXTEND/instr_code\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_IMM_EXTEND/imm_extend\[31:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_IMM_EXTEND" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_IMM_EXTEND" 2)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_IMM_EXTEND" 2)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_PC" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_PC}
+wvAddSignal -win $_nWave2 "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_PC/clk" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_PC/rst_n" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_PC/pc\[31:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_PC" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_PC" 3)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_PC" 3)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_REG_FILE" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_REG_FILE}
+wvAddSignal -win $_nWave2 \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/clk" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/rst_n" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/ra1\[4:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/ra2\[4:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/wa\[4:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/wd\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/we" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/rd1\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_REG_FILE/rd2\[31:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_REG_FILE" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_REG_FILE" 9)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_REG_FILE" 9)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_WB_MUX}
+wvAddSignal -win $_nWave2 "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_WB_MUX/sel" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_WB_MUX/in0\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_WB_MUX/in1\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_DATAPATH/U_WB_MUX/mux_out\[31:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX" 4)}
+wvScrollUp -win $_nWave2 14
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rfsrc_sel" -line 7 -pos 1 -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+wvScrollUp -win $_nWave2 7
+verdiWindowResize -win $_Verdi_1 "1281" "31" "1278" "1360"
+verdiSetActWin -win $_nWave2
+wvSetCursor -win $_nWave2 0.000000 -snap {("U_ALUSRC_MUX" 1)}
+wvScrollUp -win $_nWave2 18
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rf_we" -line 6 -pos 1 -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcSelect -win $_nTrace1 -range {1 20 5 8 12 10}
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "rfsrc_sel" -line 7 -pos 1 -win $_nTrace1
+wvSetPosition -win $_nWave2 {("dut" 0)}
+wvSetPosition -win $_nWave2 {("dut" 1)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 3)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 4)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 5)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 6)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 7)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 8)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 7)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 6)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 5)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 4)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 5)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX" 4)}
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU.U_DATAPATH" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 1)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 2)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 1)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvSetPosition -win $_nWave2 {("dut" 2)}
+wvDumpScope "tb_rv32i_cpu.dut.U_RV32I_CPU"
+wvSetPosition -win $_nWave2 {("dut" 2)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_RV32I_CPU}
+wvAddSignal -win $_nWave2 "/tb_rv32i_cpu/dut/U_RV32I_CPU/clk" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/rst_n" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/instr_code\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/drdata\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/instr_addr\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/daddr\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/dwdata\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/dwe" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/itype\[2:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 9)}
+wvSelectGroup -win $_nWave2 {dut/U_RV32I_CPU}
+verdiSetActWin -win $_nWave2
+srcTBRunSim
+wvZoomAll -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 5 )} 
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 3)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 2)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 3)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 4)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 3)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 3)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 4)}
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 6 )} 
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 7 )} 
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 6)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 5)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 5)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 6)}
+wvSetCursor -win $_nWave2 20431.217482 -snap {("U_RV32I_CPU" 5)}
+wvSetCursor -win $_nWave2 20872.632674 -snap {("U_RV32I_CPU" 6)}
+wvSetCursor -win $_nWave2 20872.632674 -snap {("U_RV32I_CPU" 7)}
+wvSetCursor -win $_nWave2 18602.497399 -snap {("U_RV32I_CPU" 3)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSelectSignal -win $_nWave2 {( "dut/U_DATAPATH/U_ALUSRC_MUX" 2 )} 
+wvScrollDown -win $_nWave2 0
+wvScrollUp -win $_nWave2 16
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "dut/U_DATAPATH" 8 )} 
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 9 )} 
+wvScrollDown -win $_nWave2 1
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH}
+wvScrollDown -win $_nWave2 7
+wvSelectSignal -win $_nWave2 {( "dut/U_DATAPATH" 11 )} 
+wvSelectSignal -win $_nWave2 {( "dut/U_DATAPATH" 11 )} 
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 11)}
+wvExpandBus -win $_nWave2
+wvScrollUp -win $_nWave2 28
+wvSelectSignal -win $_nWave2 {( "dut/U_DATAPATH" 11 )} 
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 11)}
+wvCollapseBus -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 11)}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_ALU}
+wvScrollDown -win $_nWave2 4
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_ALUSRC_MUX}
+wvScrollDown -win $_nWave2 1
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_IMM_EXTEND}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_PC}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_REG_FILE}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_WB_MUX}
+srcHBSelect "tb_rv32i_cpu.dut.U_ROM" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "tb_rv32i_cpu.dut.U_DATA_MEM" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 8)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 10)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 11)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_ALU" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_IMM_EXTEND" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX" 0)}
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX" 0)}
+wvDumpScope "tb_rv32i_cpu.dut.U_DATA_MEM"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX/U_DATA_MEM" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_DATA_MEM}
+wvAddSignal -win $_nWave2 "/tb_rv32i_cpu/dut/U_DATA_MEM/clk" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/daddr\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/dwdata\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/dwe" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/itype\[2:0\]" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/drdata\[31:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX/U_DATA_MEM" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX/U_DATA_MEM" 6)}
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 9 )} 
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 9)}
+wvExpandBus -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX/U_DATA_MEM" 6)}
+verdiSetActWin -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 9 )} 
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 9)}
+wvCollapseBus -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 9)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_WB_MUX/U_DATA_MEM" 6)}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 9 )} 
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 9)}
+wvExpandBus -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 8 )} 
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 9 )} 
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 9)}
+wvCollapseBus -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 9)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH}
+wvScrollDown -win $_nWave2 6
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH}
+wvScrollDown -win $_nWave2 0
+srcHBDrag -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+wvSetPosition -win $_nWave2 {("G2" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvDumpScope "tb_rv32i_cpu.dut.U_DATA_MEM"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_DATA_MEM" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_DATA_MEM}
+wvAddSignal -win $_nWave2 "/tb_rv32i_cpu/dut/U_DATA_MEM/clk" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/daddr\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/dwdata\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/dwe" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/itype\[2:0\]" \
+           "/tb_rv32i_cpu/dut/U_DATA_MEM/drdata\[31:0\]"
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_DATA_MEM" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH/U_DATA_MEM" 6)}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH}
+verdiSetActWin -win $_nWave2
+wvSelectSignal -win $_nWave2 {( "dut/U_RV32I_CPU" 9 )} 
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_DATA_MEM}
+wvSetPosition -win $_nWave2 {("dut/U_DATAPATH" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 9)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 9)}
+wvSelectSignal -win $_nWave2 {( "dut/U_DATA_MEM" 6 )} 
+wvSetPosition -win $_nWave2 {("dut/U_DATA_MEM" 6)}
+wvExpandBus -win $_nWave2
+wvScrollUp -win $_nWave2 15
+wvSelectSignal -win $_nWave2 {( "dut/U_DATA_MEM" 6 )} 
+wvSetPosition -win $_nWave2 {("dut/U_DATA_MEM" 6)}
+wvCollapseBus -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_DATA_MEM" 6)}
+wvScrollUp -win $_nWave2 4
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH}
+wvSetCursor -win $_nWave2 20872.632674 -snap {("U_DATA_MEM" 2)}
+wvSetCursor -win $_nWave2 22196.878252 -snap {("U_RV32I_CPU" 6)}
+wvSetCursor -win $_nWave2 21944.640999 -snap {("U_RV32I_CPU" 6)}
+wvScrollDown -win $_nWave2 0
+srcHBSelect "tb_rv32i_cpu.dut.U_RV32I_CPU.U_CONTROL_UNIT" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave2 {("dut" 0)}
+wvSetPosition -win $_nWave2 {("dut" 1)}
+wvSetPosition -win $_nWave2 {("dut" 2)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 1)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 2)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 1)}
+wvSetPosition -win $_nWave2 {("dut/U_RV32I_CPU" 0)}
+wvSetPosition -win $_nWave2 {("dut" 2)}
+wvDumpScope "tb_rv32i_cpu.dut.U_RV32I_CPU.U_CONTROL_UNIT"
+wvSetPosition -win $_nWave2 {("dut" 2)}
+wvSetPosition -win $_nWave2 {("dut/U_CONTROL_UNIT" 0)}
+wvAddSubGroup -win $_nWave2 -holdpost {U_CONTROL_UNIT}
+wvAddSignal -win $_nWave2 \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/instr_code\[31:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/rf_we" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/alusrc_sel" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/alu_control\[3:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/dwe" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/itype\[2:0\]" \
+           "/tb_rv32i_cpu/dut/U_RV32I_CPU/U_CONTROL_UNIT/rfsrc_sel"
+wvSetPosition -win $_nWave2 {("dut/U_CONTROL_UNIT" 0)}
+wvSetPosition -win $_nWave2 {("dut/U_CONTROL_UNIT" 7)}
+wvSetCursor -win $_nWave2 8702.185224 -snap {("U_CONTROL_UNIT" 4)}
+verdiSetActWin -win $_nWave2
+wvSetCursor -win $_nWave2 20809.573361 -snap {("U_CONTROL_UNIT" 7)}
+wvSetCursor -win $_nWave2 21755.463059 -snap {("U_RV32I_CPU" 0)}
+wvSetCursor -win $_nWave2 14251.404787 -snap {("U_CONTROL_UNIT" 3)}
+wvSelectSignal -win $_nWave2 {( "dut/U_CONTROL_UNIT" 1 )} 
+wvCollapseGroup -win $_nWave2 "dut/U_RV32I_CPU"
+wvSelectSignal -win $_nWave2 {( "dut/U_CONTROL_UNIT" 1 )} 
+wvExpandGroup -win $_nWave2 "dut/U_RV32I_CPU"
+wvSelectGroup -win $_nWave2 {dut/U_RV32I_CPU}
+wvSelectGroup -win $_nWave2 {dut/U_DATA_MEM}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 7
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_REG_FILE}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_REG_FILE}
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_WB_MUX}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 10
+wvScrollDown -win $_nWave2 7
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_WB_MUX/U_DATA_MEM}
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("dut/U_CONTROL_UNIT" 7)}
+wvScrollDown -win $_nWave2 0
+wvSelectSignal -win $_nWave2 {( "dut/U_DATAPATH/U_WB_MUX" 3 )} 
+wvSelectSignal -win $_nWave2 {( "dut/U_DATAPATH/U_WB_MUX" 1 )} 
+wvSelectGroup -win $_nWave2 {dut/U_DATAPATH/U_WB_MUX}
+wvSelectSignal -win $_nWave2 {( "dut/U_DATAPATH/U_WB_MUX" 1 )} 
+srcTBSimReset
+srcTBRunSim
+verdiSetActWin -dock widgetDock_<Object._Tree>
+wvZoomAll -win $_nWave2
+verdiSetActWin -win $_nWave2
+verdiSetActWin -dock widgetDock_<Object._Tree>
+debExit

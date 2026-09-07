@@ -1,0 +1,182 @@
+`include  "uvm_macros.svh"
+import  uvm_pkg::*;
+
+
+
+
+interface counter_if(input clk);
+  logic       rst_n;
+  logic       enable;
+  logic [2:0] counter;
+  logic       o_tick;
+
+  clocking drv_cb @(posedge clk);
+    default input #1step output #1;
+    output rst_n;
+    output enable;
+  endclocking
+
+  clocking mon_cb @(posedge clk);
+    default input #1step;
+    input       rst_n;
+    input       enable;
+    input       counter;
+    input       o_tick;
+  endclocking
+
+  modport drv_mb (clocking drv_cb, input clk);
+  modport mon_mb (clocking mon_cb, input clk);
+
+endinterface
+
+class counter_seq_item extends uvm_sequence_item;
+  rand bit      enable;
+       bit       rst_n;
+       bit [2:0] counter;
+       bit       o_tick;
+
+  constraint c_en {enable dist {0 :=1, 1 :=9};}
+
+  function new(string name = "counter_seq_item");
+    super.new(name);
+  endfunction
+
+  `uvm_object_utils_begin(counter_seq_item)
+    `uvm_field_int(enable,UVM_DEFAULT)
+    `uvm_field_int(rst_n,UVM_DEFAULT)
+    `uvm_field_int(counter,UVM_DEFAULT)
+    `uvm_field_int(o_tick,UVM_DEFAULT)
+  `uvm_object_utils_end
+
+  virtual function string convert2string();
+    return $sformatf("reset_n = %b, enable = %b, counter = %d, o_tick = %b", 
+                    rst_n, enable, counter, o_tick);
+  endfunction
+
+endclass
+
+// sequence
+class counter_sequence extends uvm_sequence #(counter_seq_item);
+  `uvm_object_utils(counter_sequence)
+
+  function new (string name = "counter_seq");
+    super.new(name);
+  endfunction
+
+  virtual task body();
+  repeat(100) begin
+    // new counter seq item
+    counter_seq_item c_item;
+    c_item = counter_seq_item::type_id::create("c_item");
+    // randomized()
+    start_item(c_item);
+      if(!c_item.randomize()) begin
+        `uvm_fatal(get_type_name(),"c_item randomized fail");
+      end
+    finish_item(c_item);
+  end
+  endtask
+
+endclass
+
+class counter_driver extends uvm_driver #(counter_seq_item);
+  `uvm_component_utils(counter_driver)
+  virtual counter_if c_if;
+  counter_seq_item c_item;
+
+  function new(string name = "counter_drv", uvm_component c = null);
+    super.new(name, c);
+  endfunction
+
+  // build_phase
+  virtual function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    // interface
+    if(!uvm_config_db#(virtual counter_if)::get(this, "","c_if", c_if)) begin
+      uvm_fatal(get_name(),"unable to access counter interface");
+    end
+  endfunction
+
+  // run_phase
+  virtual task run_phase(uvm_phase phase);
+    super.run_phase(phase);
+
+    forever begin
+
+      // drive
+      // get_seq_item
+      counter_seq_item.get_next_item(c_item);
+        @(c_if.drv_mb);
+        c_if.mb_drv.rst_n <= 1'b1;
+        c_if.mb_drv.enable <= c_item.enable;
+        counter_seq_item.item_done();
+        end
+      endtask
+  endclass
+
+
+class counter_monitor extends uvm_monitor;
+  `uvm_conponent_utils(counter_monitor)
+
+  virtual counter_if c_if;
+  counter_seq_item c_item;
+  uvm_analysis_port#(counter_seq_item) send;
+
+  function new(string name = "counter_mon", uvm_component c = null);
+    super.new(name,c);
+  endfunction
+
+  virtual function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    if(!uvm_config_db#(virtual counter_if)::get(this, "","c_if", c_if)) begin
+      uvm_fatal(get_name(),"unable to access counter interface");
+    end
+    send = new("write", this);
+  endfunction
+
+  virtual task run_phase(uvm_phase phase);
+    // count_seq_item new
+    c_item = counter_seq_item::type_id::create("counter_seq_item", this);
+    @(c_if.mon_mb);
+    c_item.rst_n    <= c_if.mon_cb.rst_n;
+    c_item.enable   <= c_if.mon_cb.enable;
+    c_item.counter  <= c_if.mon_cb.counter;
+    c_item.o_tick   <= c_if.mon_cb.o_tick;
+
+    endtask
+endclass
+
+
+
+
+
+
+
+
+
+
+module tb_counter();
+
+  logic clk = 0;
+  always #5 clk = ~clk;
+
+  counter_if c_if(clk);
+
+  counter dut(
+    .clk    (clk),
+    .rst_n  (c_if.rst_n),
+    .enable (c_if.enable),
+    .counter(c_if.counter),
+    .o_tick (c_if.o_tick)
+  );
+
+  initial begin
+    // VCS wave db
+    $fsdbDumpfile("wave.fsdb");
+    $fsdbDumpvars(0, tb_counter);
+  end
+
+  initial begin
+  end
+
+endmodule

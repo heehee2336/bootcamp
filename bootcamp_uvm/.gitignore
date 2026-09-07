@@ -1,0 +1,9 @@
+csrc/
+verdiLog/
+simv.daidir/
+*.log
+*.key
+*.fsdb
+**/csrc/
+**/verdiLog/
+**/simv.daidir/
