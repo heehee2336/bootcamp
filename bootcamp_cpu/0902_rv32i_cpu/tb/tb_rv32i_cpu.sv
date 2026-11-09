@@ -17,7 +17,7 @@ module tb_rv32i_cpu();
     #10;
     rst_n =1;
 
-    #50;
+    #5000;
     $finish;
 
   end

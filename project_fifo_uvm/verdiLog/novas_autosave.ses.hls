@@ -1,0 +1,10 @@
+	tb_fifo_uvm.dut.push	ID_GRAY3
+	tb_fifo_uvm.dut.clk	ID_GRAY5
+	tb_fifo_uvm.dut.rst_n	ID_GRAY5
+	tb_fifo_uvm.dut.wdata	ID_ORANGE5
+	tb_fifo_uvm.dut.pop	ID_GRAY4
+	tb_fifo_uvm.dut.full	ID_GRAY3
+	tb_fifo_uvm.dut.empty	ID_GRAY5
+	tb_fifo_uvm.dut.rdata	ID_ORANGE5
+	tb_fifo_uvm.dut.w_wptr	ID_ORANGE5
+	tb_fifo_uvm.dut.w_rptr	ID_ORANGE5

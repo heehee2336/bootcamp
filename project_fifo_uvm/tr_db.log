@@ -1,0 +1,13 @@
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:623}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:623}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:623}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:623}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:624}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:624}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:624}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:624}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:624}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:624}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:624}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:625}
+  CREATE_STREAM @0 {NAME:fifo_seq T:Transactions SCOPE:uvm_test_top.fifo_env.fifo_agt.fifo_sqr STREAM:625}

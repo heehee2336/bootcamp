@@ -1,0 +1,8 @@
+debImport "-abdir" "./build/simv.daidir"
+wvCreateWindow
+wvOpenFile -win $_nWave2 {/home/aedu16/project_fifo_uvm/wave.fsdb}
+verdiSetActWin -win $_nWave2
+verdiWindowResize -win $_Verdi_1 "830" "370" "900" "700"
+verdiWindowResize -win $_Verdi_1 "830" "370" "900" "700"
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+debExit

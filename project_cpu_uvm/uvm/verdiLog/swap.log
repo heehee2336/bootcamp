@@ -1,0 +1,57 @@
+version: (200506)
+
+available memory: 64M bytes
+used memory: 507904 bytes [need 496K bytes if disable swap]
+
+used block: 20 [memory(20) file(0)]
+                 [ 8K(14) 64K(6) { total 496K bytes } ]
+overhead: (9523) bytes for (20) blocks [Average: (476) bytes/block]
+
+write  => 0(times) 0K(bytes) [0K bytes to file]
+read   => 6(times) 108K(bytes) [18K bytes compressed data from file]
+access => 299862(times) 2373M(bytes)
+          [hit ratio: 99.998%]
+
+time: write(0) read(0)  unit: second
+
+swap file directory: (/home/aedu16/project_cpu_uvm/uvm/verdiLog)
+used swap file number: (8)
+
+
+
+swap file manager:
+arrSize: (256)
+idxCnt: (9)
+closeHead: (1)
+closeTail: (8)
+openCnt: (7)
+fid(8): fd(1073741829) fileName(/home/aedu16/project_cpu_uvm/uvm/build/simv.daidir/kdb.elab++/work.lib++/data_memory.sv001.tdc)
+	size(1775) lastModTime(1789402351) curModTime(1789402351)
+	mode(rb)	hot(0) cool(7) pos(0)
+fid(7): fd(1073741828) fileName(/home/aedu16/project_cpu_uvm/uvm/build/simv.daidir/kdb.elab++/work.lib++/instruction_rom.sv001.tdc)
+	size(1720) lastModTime(1789402351) curModTime(1789402351)
+	mode(rb)	hot(8) cool(6) pos(0)
+fid(6): fd(1073741827) fileName(/home/aedu16/project_cpu_uvm/uvm/build/simv.daidir/kdb.elab++/work.lib++/datapath.sv001.tdc)
+	size(11634) lastModTime(1789402351) curModTime(1789402351)
+	mode(rb)	hot(7) cool(5) pos(0)
+fid(5): fd(1073741826) fileName(/home/aedu16/project_cpu_uvm/uvm/build/simv.daidir/kdb.elab++/work.lib++/control_unit.sv001.tdc)
+	size(4867) lastModTime(1789402351) curModTime(1789402351)
+	mode(rb)	hot(6) cool(4) pos(0)
+fid(4): fd(1073741825) fileName(/home/aedu16/project_cpu_uvm/uvm/build/simv.daidir/kdb.elab++/work.lib++/cpu_uvm.sv.tdc)
+	size(2227) lastModTime(1789402351) curModTime(1789402351)
+	mode(rb)	hot(5) cool(2) pos(0)
+fid(3): fd(0) fileName(/home/aedu16/project_cpu_uvm/uvm/build/simv.daidir/kdb.elab++/work.lib++/uvm_custom_install_verdi_recorder.sv.tdc)
+	size(16101) lastModTime(1789402351) curModTime(1789402351)
+	mode(rb)	hot(0) cool(0) pos(0)
+fid(2): fd(22) fileName(/home/aedu16/project_cpu_uvm/uvm/verdiLog/_swap_0001#261616969#572978)
+	size(0) lastModTime(0) curModTime(1789402677)
+	mode(w+b)	hot(4) cool(1) pos(0)
+fid(1): fd(1073741824) fileName(/home/aedu16/project_cpu_uvm/uvm/build/simv.daidir/kdb.elab++/work.lib++/tb_cpu_uvm.sv.tdc)
+	size(23292) lastModTime(1789402351) curModTime(1789402351)
+	mode(rb)	hot(2) cool(0) pos(0)
+fid(0): fd(0) fileName(NULL)
+	mode(NULL)	hot(0) cool(0) pos(0)
+==================================================
+mySelf(0x1fd421f0) pre(0x2155b830) next((nil))
+version(200506)
+date(Dec  3 2024 20:20:45)

@@ -1,0 +1,104 @@
+@verdi rc file Version 1.0
+[General]
+saveDB = TRUE
+relativePath = FALSE
+saveSingleView = FALSE
+saveNWaveWinId = 
+VerdiVersion = Verdi_W-2024.09-SP2
+[KeyNote]
+Line1 = Automatic Backup 0
+Line2 = Save Open Database Information: Yes
+Line3 = Path Option: Absolute Paths
+Line4 = Windows Option: All Windows
+[OneSearch]
+isExisted = TRUE
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+Console = TRUE
+powerDumped = 0
+[fusa]
+fdb_server = 
+fdb_proj = 
+fdb_campaign = 
+fdb_tool = 
+[hb]
+postSimFile = /home/aedu16/project_fifo_uvm/inter.fsdb
+syncTime = 200435000
+viewport = 1144 370 900 700 0 0 290 898
+activeNode = "fifo_test.fifo_env.fifo_cov.write"
+activeScope = "fifo_test.fifo_env.fifo_cov.write"
+activeFile = "./tb/tb_fifo_uvm_ver2.sv"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 224
+baMode = False
+srcLineNum = True
+AutoWrap = True
+IdentifyFalseLogic = False
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+powerAwareAnnot = True
+safetyAwareAnnot = True
+amsAnnot = True
+DnDtraceCrossHierOnly = True
+leadingZero = False
+signalPane = False
+SourceVerticalScrollLines = 5
+Scope1 = "fifo_test.fifo_env.fifo_cov.write"
+Scope2 = "tb_fifo_uvm.f_if"
+Scope3 = "tb_fifo_uvm.f_if.drv_mb"
+Scope4 = "tb_fifo_uvm.f_if.mon_mb"
+Scope5 = "uvm_custom_install_recording"
+Scope6 = "uvm_custom_install_recording.unnamed$$_0._vcs_catcher.process_all_report_catchers.catcher.m_modified_report_message.do_copy.report_message.__m_uvm_field_automation.unnamed$$_0.local_data__.create.tmp._report_server.get_server.cs.inst.get_report_server.unn\
+amed$$_0.f.execute_report_message.unnamed$$_9.l_root.run_test"
+Scope7 = "tb_fifo_uvm.dut"
+Scope8 = "tb_fifo_uvm"
+multipleSelection = 1 228 9 0 0
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.design]
+importCmd = "-abdir" "./build/simv.daidir" "-dbdir" "/home/aedu16/project_fifo_uvm/build/simv.daidir" 
+invokeDir = /home/aedu16/project_fifo_uvm
+[hb.sourceTab.1]
+scope = fifo_test.fifo_env.fifo_cov.write
+File = /home/aedu16/project_fifo_uvm/tb/tb_fifo_uvm_ver2.sv
+Line = 225
+[nMemoryManager]
+WaveformFile = /home/aedu16/project_fifo_uvm/inter.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 25 900 286 100 65
+primaryWindow = TRUE
+SessionFile = /home/aedu16/project_fifo_uvm/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+waveformToolTip = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+displayGridLine = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSyncCursorMarker = FALSE
+waveformSyncHorizontalRange = FALSE
+waveformSyncVerticalscroll = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE
+fsaRegMask = TRUE
+fsaCoreMask = TRUE
+fsaSfsmMask = TRUE
+fsaEcrMask = TRUE
+tPropMask = TRUE
